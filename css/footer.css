@@ -1,0 +1,129 @@
+/* Footer Styles */
+.main-footer {
+    background: var(--secondary-color);
+    color: white;
+    padding: 4rem 0 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section {
+    margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-section h4::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background: var(--primary-color);
+    bottom: 0;
+    left: 0;
+}
+
+.footer-section p {
+    margin-bottom: 1rem;
+    color: #bdc3c7;
+    line-height: 1.6;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 1.5rem;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.social-icons a:hover {
+    background: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #bdc3c7;
+    transition: var(--transition);
+    display: block;
+}
+
+.footer-section ul li a:hover {
+    color: var(--primary-color);
+    padding-left: 5px;
+}
+
+.payment-methods {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.payment-methods img {
+    height: 25px;
+    filter: grayscale(100%) brightness(150%);
+    transition: var(--transition);
+}
+
+.payment-methods img:hover {
+    filter: none;
+}
+
+.footer-bottom {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.footer-bottom p {
+    color: #bdc3c7;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.legal-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.legal-links a {
+    color: #bdc3c7;
+    font-size: 0.8rem;
+    transition: var(--transition);
+}
+
+.legal-links a:hover {
+    color: var(--primary-color);
+}

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tienda online con pagos seguros via Payphone">
+    <title>TechStore - Compra con Payphone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico" type="image/x-icon">
+    <!-- SDK Payphone -->
+    <script src="https://payphone-js.payphone.com.pe/v3/payphone.js"></script>
+</head>
+<body>
+    <!-- Navbar Moderna -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="logo">
+                <img src="images/logo.svg" alt="TechStore" width="150">
+            </a>
+            <div class="navbar-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#productos">Productos</a>
+                <a href="#ofertas">Ofertas</a>
+                <a href="#contacto">Contacto</a>
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <header class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Los mejores productos al mejor precio</h1>
+            <p>Paga de forma segura con Payphone</p>
+            <a href="#productos" class="btn-hero">Ver productos</a>
+        </div>
+    </header>
+
+    <!-- Sección de Productos -->
+    <section class="product-section" id="productos">
+        <div class="section-header">
+            <h2>Nuestros Productos</h2>
+            <p>Selecciona los mejores artículos para ti</p>
+        </div>
+        
+        <div class="product-filters">
+            <button class="filter-btn active" data-category="all">Todos</button>
+            <button class="filter-btn" data-category="tecnologia">Tecnología</button>
+            <button class="filter-btn" data-category="hogar">Hogar</button>
+            <button class="filter-btn" data-category="oficina">Oficina</button>
+        </div>
+        
+        <div class="product-grid">
+            <!-- Producto 1 -->
+            <div class="product-card" data-category="tecnologia">
+                <div class="product-badge">Nuevo</div>
+                <div class="product-image">
+                    <img src="images/productos/audifonos.jpg" alt="Audífonos Inalámbricos" loading="lazy">
+                    <div class="quick-view">Vista Rápida</div>
+                </div>
+                <div class="product-info">
+                    <h3>Audífonos Inalámbricos X200</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(128)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">S/ 129.90</span>
+                        <span class="old-price">S/ 159.90</span>
+                    </div>
+                    <button class="add-to-cart" data-id="p001" data-price="129.90">
+                        <i class="fas fa-shopping-cart"></i> Añadir al carrito
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Producto 2 -->
+            <div class="product-card" data-category="hogar">
+                <div class="product-badge offer">-20%</div>
+                <div class="product-image">
+                    <img src="images/productos/parlante.jpg" alt="Parlante Bluetooth" loading="lazy">
+                    <div class="quick-view">Vista Rápida</div>
+                </div>
+                <div class="product-info">
+                    <h3>Parlante Bluetooth S350</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(76)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">S/ 89.90</span>
+                        <span class="old-price">S/ 109.90</span>
+                    </div>
+                    <button class="add-to-cart" data-id="p002" data-price="89.90">
+                        <i class="fas fa-shopping-cart"></i> Añadir al carrito
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Más productos... -->
+        </div>
+    </section>
+
+    <!-- Sección de Ofertas -->
+    <section class="offers-section" id="ofertas">
+        <!-- Contenido de ofertas... -->
+    </section>
+
+    <!-- Carrito de Compras Flotante -->
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Tu Carrito</h3>
+            <button class="close-cart">&times;</button>
+        </div>
+        <div class="cart-items">
+            <!-- Items dinámicos -->
+        </div>
+        <div class="cart-summary">
+            <div class="subtotal">
+                <span>Subtotal:</span>
+                <span class="subtotal-amount">S/ 0.00</span>
+            </div>
+            <div class="shipping">
+                <span>Envío:</span>
+                <span class="shipping-amount">Gratis</span>
+            </div>
+            <div class="total">
+                <span>Total:</span>
+                <span class="total-amount">S/ 0.00</span>
+            </div>
+            <button class="checkout-btn">Pagar con Payphone</button>
+        </div>
+    </div>
+
+    <!-- Modal de Pago -->
+    <div class="payment-modal" id="paymentModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <img src="images/icons/payphone-logo.png" alt="Payphone" width="120">
+                <h3>Completa tu pago</h3>
+            </div>
+            
+            <div class="payment-steps">
+                <div class="step active">1. Información</div>
+                <div class="step">2. Pago</div>
+                <div class="step">3. Confirmación</div>
+            </div>
+            
+            <form id="paymentForm" class="payment-form">
+                <div class="form-step" id="step1">
+                    <div class="form-group">
+                        <label for="customerName">Nombre Completo</label>
+                        <input type="text" id="customerName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerEmail">Correo Electrónico</label>
+                        <input type="email" id="customerEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerPhone">Teléfono (para Payphone)</label>
+                        <div class="phone-input">
+                            <select id="phoneCode">
+                                <option value="51">+51 (PE)</option>
+                            </select>
+                            <input type="tel" id="customerPhone" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerAddress">Dirección de Envío</label>
+                        <textarea id="customerAddress" rows="3"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-next">Siguiente</button>
+                    </div>
+                </div>
+                
+                <div class="form-step" id="step2" style="display:none;">
+                    <div class="payment-methods">
+                        <div class="method selected" data-method="payphone">
+                            <img src="images/icons/payphone-icon.png" alt="Payphone">
+                            <span>Payphone</span>
+                        </div>
+                        <div class="method" data-method="transfer">
+                            <i class="fas fa-university"></i>
+                            <span>Transferencia</span>
+                        </div>
+                    </div>
+                    
+                    <div class="order-summary">
+                        <h4>Resumen de tu pedido</h4>
+                        <div class="summary-items">
+                            <!-- Items dinámicos -->
+                        </div>
+                        <div class="summary-total">
+                            <span>Total a pagar:</span>
+                            <span class="final-amount">S/ 0.00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn-prev">Atrás</button>
+                        <button type="button" class="btn-pay">Pagar Ahora</button>
+                    </div>
+                </div>
+                
+                <div class="form-step" id="step3" style="display:none;">
+                    <div class="payment-success">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>¡Pago Exitoso!</h3>
+                        <p>Tu pedido ha sido procesado correctamente.</p>
+                        <div class="transaction-details">
+                            <p><strong>ID de Transacción:</strong> <span id="transactionId"></span></p>
+                            <p><strong>Monto:</strong> <span id="transactionAmount"></span></p>
+                            <p><strong>Fecha:</strong> <span id="transactionDate"></span></p>
+                        </div>
+                        <button type="button" class="btn-finish">Finalizar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Completo -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>TechStore</h4>
+                <p>La mejor tienda de tecnología en Perú con pagos seguros via Payphone.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Métodos de Pago</h4>
+                <div class="payment-methods">
+                    <img src="images/icons/payphone-icon.png" alt="Payphone">
+                    <img src="images/icons/visa.png" alt="Visa">
+                    <img src="images/icons/mastercard.png" alt="Mastercard">
+                </div>
+                <p>Aceptamos todos los métodos de pago a través de Payphone.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Av. Ejemplo 123, Lima</p>
+                <p><i class="fas fa-phone"></i> (01) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> info@techstore.com</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 TechStore. Todos los derechos reservados.</p>
+            <div class="legal-links">
+                <a href="#">Términos y Condiciones</a>
+                <a href="#">Política de Privacidad</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/cart.js"></script>
+    <script src="js/payphone-integration.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
